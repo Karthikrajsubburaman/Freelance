@@ -1,0 +1,255 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+:root {
+  --primary-color: #3f51b5;
+  --secondary-color: #00bcd4;
+  --background-color: #1a1a2e;
+  --surface-color: #16213e;
+  --on-surface-color: #e0e0e0;
+  --chat-sent: #0f3460;
+  --chat-received: #533483;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--background-color);
+  color: var(--on-surface-color);
+}
+
+.chatbox {
+  display: flex;
+  height: 80vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: var(--surface-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.chatbox-list {
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chatbox-header {
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.chatbox-header input {
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--on-surface-color);
+  font-size: 14px;
+}
+
+.chatbox-header input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.chatbox-chats {
+    overflow-y: auto;
+    height: calc(100% - 65px);
+    padding-bottom: 20px; /* Add padding at the bottom */
+  }
+  
+  .chatbox-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    cursor: pointer; /* Add cursor style to indicate clickable */
+  }
+  
+  /* Add a new class for the last item */
+  .chatbox-item:last-child {
+    margin-bottom: 20px; /* Extra space after the last item */
+  }
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
+  object-fit: cover;
+}
+
+.chatbox-info h3 {
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.chatbox-info p {
+  font-size: 13px;
+  opacity: 0.7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chatbox-window {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbox-window-header {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  background-color: rgba(255, 255, 255, 0.07);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.chatbox-window-header h2 {
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 12px;
+}
+
+.chatbox-status {
+  margin-left: auto;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.status-indicator.online {
+  background-color: #4caf50;
+}
+
+.chatbox-messages {
+  flex: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.chatbox-message {
+  max-width: 70%;
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.chatbox-message.sent {
+  align-self: flex-end;
+  background-color: var(--chat-sent);
+}
+
+.chatbox-message.received {
+  align-self: flex-start;
+  background-color: var(--chat-received);
+}
+
+.chatbox-message p {
+  margin-bottom: 3px;
+}
+
+.chatbox-message small {
+  font-size: 11px;
+  opacity: 0.7;
+}
+
+.chatbox-input {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background-color: rgba(255, 255, 255, 0.07);
+}
+
+.emoji-button, .send-button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--on-surface-color);
+}
+
+.chatbox-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--on-surface-color);
+  font-size: 14px;
+  margin: 0 10px;
+}
+
+.chatbox-input input:focus {
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.send-button svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+  .chatbox {
+    flex-direction: column;
+  }
+
+  .chatbox-list {
+    width: 100%;
+    height: 30%;
+  }
+
+  .chatbox-window {
+    height: 70%;
+  }
+}
+
+.scroll-to-bottom {
+    position: absolute;
+    bottom: 70px;
+    right: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .chatbox-messages {
+    position: relative;
+  }
+
+.chatbox-placeholder p{
+    text-align: center;
+    margin-top: 270px;
+    margin-left: 40px;
+}

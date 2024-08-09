@@ -1,0 +1,140 @@
+/* BrowseFreelancers.css */
+
+:root {
+    --primary-color: #3a86ff;
+    --secondary-color: #ff006e;
+    --card-bg: #1e2a38;
+    --card-shadow: rgba(0, 0, 0, 0.3);
+    --hover-shadow: rgba(0, 0, 0, 0.5);
+    --border-radius: 15px;
+    --transition-speed: 0.4s;
+    --background-gradient: linear-gradient(135deg, #0a1929, #1e2a38);
+  }
+  
+  .browse-freelancers {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+    font-family: "Outfit";
+    background: var(--background-gradient);
+    color: #e0e0e0;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .browse-freelancers::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at top right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.6));
+    opacity: 0.6;
+    z-index: -1;
+  }
+  
+  .browse-freelancers h1 {
+    text-align: center;
+    margin-top: 80px;
+    margin-bottom: 60px;
+    color: var(--primary-color);
+    font-size: 2.5em;
+    font-weight: 700;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .browse-freelancers h1::before {
+    content: "";
+    position: absolute;
+    left: -100%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    background-size: 200% 100%;
+    animation: gradient-slide 3s infinite;
+  }
+  
+  .freelancer-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .freelancer-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 8px var(--card-shadow);
+    overflow: hidden;
+    width: 300px;
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .freelancer-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3));
+    opacity: 0.4;
+    transition: opacity var(--transition-speed) ease;
+  }
+  
+  .freelancer-card:hover::before {
+    opacity: 0.1;
+  }
+  
+  .freelancer-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px var(--hover-shadow);
+  }
+  
+  .profile-picture-container {
+    position: relative;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+  }
+  
+  .profile-picture {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-speed) ease;
+  }
+  
+  .freelancer-card:hover .profile-picture {
+    transform: scale(1.1);
+  }
+  
+  .freelancer-info {
+    padding: 20px;
+  }
+  
+  .freelancer-info h2 {
+    margin: 0;
+    font-size: 1.6em;
+    color: var(--primary-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  }
+  
+  .freelancer-info p {
+    margin: 5px 0;
+    color: #e0e0e0;
+    font-size: 0.9em;
+  }
+  
+  .freelancer-info strong {
+    color: var(--primary-color);
+  }
+  

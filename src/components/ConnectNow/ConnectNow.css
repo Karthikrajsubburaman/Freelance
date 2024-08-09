@@ -1,0 +1,48 @@
+.connectnow {
+    text-align: center;
+    padding: 70px;
+    background-color: #f0f0f0; 
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-out forwards;
+    margin: 120px;
+  }
+  
+  .connectnow h1 {
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333; 
+  }
+  
+  .connectnow h1 span {
+    color: #0056b3; 
+  }
+  
+  .connectnow button {
+    background-color: #0056b3; 
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .connectnow button:hover {
+    background-color: #004080; 
+    transform: scale(1.05);
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  

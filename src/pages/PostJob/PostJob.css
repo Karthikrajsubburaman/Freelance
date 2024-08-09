@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #3a86ff;
+  --secondary-color: #ff006e;
+  --background-color: #0a1929;
+  --text-color: #e0e0e0;
+  --card-bg: #132f4c;
+  --input-bg: #1c3a5f;
+  --button-bg: #3a86ff;
+  --button-hover-bg: #0057b7;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --border-color: rgba(255, 255, 255, 0.3);
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #0a1929;
+  color: var(--text-color);
+}
+
+.post-job {
+  padding: 100px 50px;
+  max-width: 800px;
+  margin-bottom: 40px;
+  margin-top: -40px;
+  margin-right: auto;
+  margin-left: auto;
+  background: linear-gradient(145deg, #1c2a4a, #132f4c);
+  color: var(--text-color);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px var(--shadow-color);
+  animation: fadeIn 1s ease-in-out;
+}
+
+.post-job h1 {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  font-size: 2.8em;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.post-job-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: var(--primary-color);
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: #1c3a5f;
+  color: var(--text-color);
+  font-size: 1em;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 5px var(--primary-color);
+  outline: none;
+}
+
+.form-group input[type="file"] {
+  padding: 8px;
+}
+
+textarea {
+  resize: vertical;
+  height: 160px;
+}
+
+.submit-button {
+  padding: 15px 20px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(145deg, var(--button-bg), var(--button-hover-bg));
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.submit-button:hover {
+  background: linear-gradient(145deg, var(--button-hover-bg), var(--button-bg));
+  transform: scale(1.05);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background: linear-gradient(145deg, #1c2a4a, #132f4c);
+  padding: 30px;
+  border-radius: 15px;
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 15px 30px var(--shadow-color);
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 1.8em;
+  cursor: pointer;
+  color: var(--text-color);
+}
+
+.job-status {
+  margin-top: 30px;
+  padding: 20px;
+  background: linear-gradient(145deg, #1c2a4a, #132f4c);
+  border-radius: 15px;
+  box-shadow: 0 15px 30px var(--shadow-color);
+  animation: slideIn 0.5s ease-in-out;
+}
+
+.job-status h2 {
+  text-align: center;
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  font-size: 2em;
+}
+
+.job-details {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.job-details p {
+  margin: 0;
+}
+
+.job-details strong {
+  color: var(--secondary-color);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

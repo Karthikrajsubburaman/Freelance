@@ -1,0 +1,183 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.pro-user-page {
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  color: #fff;
+  text-align: center;
+  padding: 50px;
+  font-family: "Roboto";
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.pro-user-header h1 {
+  font-size: 3em;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #00aaff;
+  text-shadow: 0 0 10px rgba(0,170,255,0.5);
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.pro-user-header h1 span{
+    color: #fff;
+}
+
+.pro-user-header p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.3);
+}
+
+.pro-user-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin-top: 20px;
+  animation: slideUp 1s ease-out;
+}
+
+.pro-user-info {
+  text-align: left;
+  max-width: 400px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(0, 170, 255, 0.2);
+  border: 1px solid rgba(0, 170, 255, 0.3);
+}
+
+.pro-user-info img.premium-icon {
+  width: 100px;
+  margin-bottom: 20px;
+  animation: bounce 2s infinite;
+}
+
+.pro-user-info h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #00aaff;
+  text-shadow: 0 0 10px rgba(0, 170, 255, 0.5);
+}
+
+.pro-user-info ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pro-user-info ul li {
+  font-size: 1.2em;
+  margin: 10px 0;
+  padding-left: 20px;
+  position: relative;
+  text-shadow: 0 0 5px rgba(0, 170, 255, 0.5);
+}
+
+.pro-user-info ul li:before {
+  content: '✓';
+  color: #00aaff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.pro-user-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.action-button {
+  background-color: #00aaff;
+  color: #fff;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 1.2em;
+  transition: all 0.3s;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  box-shadow: 0 5px 15px rgba(0, 170, 255, 0.4);
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.action-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.2);
+  z-index: -1;
+  transition: transform 0.5s;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.action-button:hover:before {
+  transform: scaleX(1);
+}
+
+.action-button:hover {
+  background-color: #008ecc;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 170, 255, 0.6);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  from {
+    text-shadow: 0 0 10px #00aaff, 0 0 20px #00aaff, 0 0 30px #00aaff;
+  }
+  to {
+    text-shadow: 0 0 20px #00aaff, 0 0 30px #00aaff, 0 0 40px #00aaff;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}

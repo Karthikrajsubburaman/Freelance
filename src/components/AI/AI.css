@@ -1,0 +1,152 @@
+/* Container for the AI component */
+.ai-container {
+  max-width: 1200px;
+  margin: 80px auto;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #1f1c2c, #928DAB);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Header of the AI component */
+.ai-header {
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #00c8ff;
+  text-shadow: 0 4px 15px rgba(0, 200, 255, 0.6);
+  animation: headerGlowAndBlink 1.5s infinite alternate;
+}
+
+/* Keyframes for header glow and blink effect */
+@keyframes headerGlowAndBlink {
+  from { text-shadow: 0 4px 10px rgba(0, 200, 255, 0.6); }
+  to { text-shadow: 0 8px 20px rgba(0, 200, 255, 1); }
+}
+
+/* Chatbox styling */
+.ai-chatbox {
+  height: 400px;
+  overflow-y: auto;
+  border-radius: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(12px);
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Message styling */
+.message {
+  margin: 12px 0;
+  padding: 12px;
+  border-radius: 12px;
+  max-width: 85%;
+  line-height: 1.6;
+  font-size: 17px;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+/* User message styling */
+.user-message {
+  background: #00c8ff;
+  color: #fff;
+  margin-left: auto;
+  text-align: right;
+  border: 1px solid #00a3e0;
+  animation: slideInRight 0.6s ease-out;
+  box-shadow: 0 0 8px rgba(0, 200, 255, 0.5);
+}
+
+/* AI message styling */
+.ai-message {
+  background: #333;
+  color: #fff;
+  animation: slideInLeft 0.6s ease-out;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Keyframes for slide-in-right effect */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Keyframes for slide-in-left effect */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Input container styling */
+.ai-input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Input field styling */
+.ai-input-container input {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 12px;
+  font-size: 17px;
+  color: #333;
+  background: rgba(255, 255, 255, 0.2);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Input field focus styling */
+.ai-input-container input:focus {
+  background-color: white;
+  transform: scale(1.02);
+  outline: none;
+}
+
+/* Button styling */
+.ai-input-container button {
+  padding: 12px 24px;
+  border: none;
+  margin-top: 0px;
+  border-radius: 5px;
+  background: #00c8ff;
+  color: #fff;
+  cursor: pointer;
+  font-size: 17px;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+/* Button hover effect */
+.ai-input-container button:hover {
+  background-color: #00a3e0;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.4);
+}
+
+/* Button active state */
+.send-button.active {
+  background-color: #00a3e0;
+}
+
+/* Keyframes for fade-in effect */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Keyframes for futuristic glow effect for messages */
+.message:hover {
+  box-shadow: 0 0 10px rgba(0, 200, 255, 0.8);
+  transform: translateY(-5px);
+}
